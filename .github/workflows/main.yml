@@ -16,6 +16,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
+        cd myexpressapp
         docker build . -t vickybytes.azurecr.io/myexpressapp:${{ github.sha }}
         docker push vickybytes.azurecr.io/myexpressapp:${{ github.sha }}     
 
